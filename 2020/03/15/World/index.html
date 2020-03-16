@@ -135,9 +135,53 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <p>欢迎阅读本网站的第一篇文章。<br>致敬曾经那段安静写文的日子，致敬七年软件工程的学习生涯。</p>
+          <p>欢迎阅读本网站的第一篇文章，主要记录一下构建个人网站的过程。</p>
+<a id="more"></a>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>网站构建基础：域名+服务器<br>本网站域名 <a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> 购买于阿里云，为期一年。服务器是借助于Github网站，优点免费，缺点加载有点慢。如果是像我一样只是随意尝试构建一个blog，可以采取这种方式。但是如果需要构建真正的网站，还是需要花一笔钱去阿里云购买.com域名和服务器。</p>
+<p>网站页面：Hexo<br>网上有很多类似的构建页面的工具，但是经过各种对比，对于我来说还是Hexo比较容易上手。这里提醒一下使用Hexo对纯小白有点困难，新手可以上网查询其他容易操作的框架。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>代码编辑器：例如Sublime；<br>npm git node.js 下载并最好确保更新到最新版本</p>
 <hr>
-<h2 id="网站介绍"><a href="#网站介绍" class="headerlink" title="网站介绍"></a>网站介绍</h2><p>借助于Github+Hexo搭建的个人网站。域名<a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> 购买于阿里云，为期一年。</p>
+<h2 id="基本操作步骤"><a href="#基本操作步骤" class="headerlink" title="基本操作步骤"></a>基本操作步骤</h2><h2 id="一、本地使用Hexo框架构建页面"><a href="#一、本地使用Hexo框架构建页面" class="headerlink" title="一、本地使用Hexo框架构建页面"></a>一、本地使用Hexo框架构建页面</h2><p>打开电脑终端，输入命令来全局安装Hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>接下来还是通过命令行初始化一个hexo项目，自动创建一个myblog的文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init myblog</span><br></pre></td></tr></table></figure>
+
+<p>进入该目录，安装所需组件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myblog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>此时你打开myblog文件夹就会发现里面已经下载很多文件，稍后会修改站点目录下的_config.yml文件内容。</p>
+<p>进行清理缓存、生成静态文件、运行操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>提示你初始的页面已经成功建成功，打开浏览器输入localhost:4000 进行预览</p>
+<h2 id="二、新建仓库"><a href="#二、新建仓库" class="headerlink" title="二、新建仓库"></a>二、新建仓库</h2><p>在github上注册一个账号，记住你账号名称。创建一个新的repository，创建仓库的界面中Repository name那一栏输入自己的账号名称.github.io（例如 heyHuang.github.io），其他的可以不用填写。创建成功后你就拥有一个网站<a href="https://heyHuang.github.io">https://heyHuang.github.io</a> ，但是打开网页是没有内容，因为你还没有将刚才本地构建的网站上传到github中。</p>
+<h2 id="三、Hexo关联GitHub"><a href="#三、Hexo关联GitHub" class="headerlink" title="三、Hexo关联GitHub"></a>三、Hexo关联GitHub</h2><p><a href="https://blog.csdn.net/ithanmang/article/details/80869923" target="_blank" rel="noopener">本地项目关联githu参考网站步骤</a><br>打开电脑终端，输入命令，名字替换成github上的用户名，email则是注册github时的邮箱</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"heyHuang"</span></span><br><span class="line">$ git config --global user.email <span class="string">"584453773@qq.com"</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"584453773@qq.com"</span></span><br></pre></td></tr></table></figure>
+<p>最后一行确定之后，会出现一些命令，直接enter不用管。</p>
+<p>经过上述步骤后，查看自己的电脑里有没有.ssh的文件夹，里面有两个文件id_rsa和id_rsa.pub，打开id_rsa.pub文件并复制里面的内容。<br>打开github网页，点击settings，然后再点击SSH and GPG keys，点击new ssh key新建一个，title随意起名字，然后把刚刚复制的内容粘贴到key中。<br>最后测试一下链接有没有成功，在命令行中输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、部署网站"><a href="#四、部署网站" class="headerlink" title="四、部署网站"></a>四、部署网站</h2><p>链接成功之后就可以上传文件到github中，这里利用的是hexo中的一个插件，下载命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>安装成功之后，打开myblog文件夹中_config.yml文件，找到关键词deploy，填写一些信息，注意换成你自己的名字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:heyhuang/heyhuang.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>然后打开myblog文件夹的终端，开始部署：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>刷新一下github中heyHuang.github.io仓库页面，本地的文件已经上传。打开网站<a href="https://heyHuang.github.io">https://heyHuang.github.io</a> ，发现页面和localhost:4000 预览的结果一样。此时一个简单的个人网站已经构建好了。</p>
+<hr>
+<h2 id="进阶步骤"><a href="#进阶步骤" class="headerlink" title="进阶步骤"></a>进阶步骤</h2><h2 id="一、修改域名"><a href="#一、修改域名" class="headerlink" title="一、修改域名"></a>一、修改域名</h2><p>（1）首先购买一个域名，我是直接上阿里云选了一个比较便宜的域名，如果是.com这种费用就会高一点。购买成功之后，直接在阿里云里面操作，打开域名控制台，打开刚才购买的域名的解析，添加记录：记录类型选择CNAME，主机记录填写www，记录值填写heyHuang.github.io<br>（2）然后打开github中heyHuang.github.io仓库，添加文件，命名为CNAME，内容则你申请的域名（<a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> ）<br>等一会儿，打开<a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> 网页，此时域名已经修改成功。</p>
+<h2 id="二、修改页面设计"><a href="#二、修改页面设计" class="headerlink" title="二、修改页面设计"></a>二、修改页面设计</h2><p>hexo初始化的页面没什么特点，可以根据自己的需求修改主题。进入hexo官网选择主题，这里主要解释一下操作步骤，以NEXT主题为例。你可以去NEXT主题作者的github上直接下载，一般作者都会有说明，当然也可以利用命令行操作。</p>
+<p>打开myblog文件夹的终端，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>下载过程可能有点慢，然后你就会发现themes文件夹就下载好了next的主题。还是打开站点目录下的_config.yml文件，找到heme，修改主题为next。然后再重复清理缓存、生成静态文件、运行的操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hero s</span><br></pre></td></tr></table></figure>
+<p>本地修改完之后，再次部署到github上，这里注意的是需要重复操作一（2）</p>
+<h2 id="三、创建文章"><a href="#三、创建文章" class="headerlink" title="三、创建文章"></a>三、创建文章</h2><p>打开myblog文件夹的终端，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Hello World"</span></span><br></pre></td></tr></table></figure>
+<p>生产后会提示你文件路径，一般在source文件夹中_post目录下，具体的文章格式可以参考网上的模板。</p>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2><p>以上步骤都是mac系统下操作，windows略有些不同。中间踩了很多坑，本文仅供参考。</p>
 
         </div>
       </article>
