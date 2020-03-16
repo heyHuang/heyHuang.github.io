@@ -138,7 +138,7 @@
           <p>欢迎阅读本网站的第一篇文章，主要记录一下构建个人网站的过程。</p>
 <a id="more"></a>
 
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>网站构建基础：域名+服务器<br>本网站域名 <a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> 购买于阿里云，为期一年。服务器是借助于Github网站，优点免费，缺点加载有点慢。如果是像我一样只是随意尝试构建一个blog，可以采取这种方式。但是如果需要构建真正的网站，还是需要花一笔钱去阿里云购买.com域名和服务器。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>网站构建基础：域名+服务器<br>本网站域名 <a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> 购买于阿里云，为期一年。服务器是借助于Github网站，优点免费，缺点加载有点慢。如果是像我一样只是随意尝试构建一个静态博客网站，可以采取这种方式。</p>
 <p>网站页面：Hexo<br>网上有很多类似的构建页面的工具，但是经过各种对比，对于我来说还是Hexo比较容易上手。这里提醒一下使用Hexo对纯小白有点困难，新手可以上网查询其他容易操作的框架。</p>
 <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>代码编辑器：例如Sublime；<br>npm git node.js 下载并最好确保更新到最新版本</p>
 <hr>
@@ -155,7 +155,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 <p>提示你初始的页面已经成功建成功，打开浏览器输入localhost:4000 进行预览</p>
 <h2 id="二、新建仓库"><a href="#二、新建仓库" class="headerlink" title="二、新建仓库"></a>二、新建仓库</h2><p>在github上注册一个账号，记住你账号名称。创建一个新的repository，创建仓库的界面中Repository name那一栏输入自己的账号名称.github.io（例如 heyHuang.github.io），其他的可以不用填写。创建成功后你就拥有一个网站<a href="https://heyHuang.github.io">https://heyHuang.github.io</a> ，但是打开网页是没有内容，因为你还没有将刚才本地构建的网站上传到github中。</p>
-<h2 id="三、Hexo关联GitHub"><a href="#三、Hexo关联GitHub" class="headerlink" title="三、Hexo关联GitHub"></a>三、Hexo关联GitHub</h2><p><a href="https://blog.csdn.net/ithanmang/article/details/80869923" target="_blank" rel="noopener">本地项目关联githu参考网站步骤</a><br>打开电脑终端，输入命令，名字替换成github上的用户名，email则是注册github时的邮箱</p>
+<h2 id="三、Hexo关联GitHub"><a href="#三、Hexo关联GitHub" class="headerlink" title="三、Hexo关联GitHub"></a>三、Hexo关联GitHub</h2><p><a href="https://blog.csdn.net/ithanmang/article/details/80869923" target="_blank" rel="noopener">本地项目关联githu参考网站</a><br>打开电脑终端，输入命令，名字替换成github上的用户名，email则是注册github时的邮箱</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"heyHuang"</span></span><br><span class="line">$ git config --global user.email <span class="string">"584453773@qq.com"</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"584453773@qq.com"</span></span><br></pre></td></tr></table></figure>
 <p>最后一行确定之后，会出现一些命令，直接enter不用管。</p>
 <p>经过上述步骤后，查看自己的电脑里有没有.ssh的文件夹，里面有两个文件id_rsa和id_rsa.pub，打开id_rsa.pub文件并复制里面的内容。<br>打开github网页，点击settings，然后再点击SSH and GPG keys，点击new ssh key新建一个，title随意起名字，然后把刚刚复制的内容粘贴到key中。<br>最后测试一下链接有没有成功，在命令行中输入：</p>
@@ -177,11 +177,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 <p>下载过程可能有点慢，然后你就会发现themes文件夹就下载好了next的主题。还是打开站点目录下的_config.yml文件，找到heme，修改主题为next。然后再重复清理缓存、生成静态文件、运行的操作：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hero s</span><br></pre></td></tr></table></figure>
-<p>本地修改完之后，再次部署到github上，这里注意的是需要重复操作一（2）</p>
+<p>本地修改完之后，再次部署到github上，这里注意的是需要重复一（2）操作（或者直接在settings里的GitHub Pages中添加域名）</p>
 <h2 id="三、创建文章"><a href="#三、创建文章" class="headerlink" title="三、创建文章"></a>三、创建文章</h2><p>打开myblog文件夹的终端，输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"Hello World"</span></span><br></pre></td></tr></table></figure>
 <p>生产后会提示你文件路径，一般在source文件夹中_post目录下，具体的文章格式可以参考网上的模板。</p>
-<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2><p>以上步骤都是mac系统下操作，windows略有些不同。中间踩了很多坑，本文仅供参考。</p>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2><p>后续还是会对网站进行一些优化。上述步骤都是在Mac系统下操作，Windows略有些不同。两天时间里踩了很多坑，过程非常酸爽，但能拥有一个自己的静态小网站很欣慰，最后，Hello world！</p>
 
         </div>
       </article>
