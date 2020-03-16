@@ -154,7 +154,7 @@
 <p>进行清理缓存、生成静态文件、运行操作</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 <p>提示你初始的页面已经成功建成功，打开浏览器输入localhost:4000 进行预览</p>
-<h2 id="二、新建仓库"><a href="#二、新建仓库" class="headerlink" title="二、新建仓库"></a>二、新建仓库</h2><p>在github上注册一个账号，记住你账号名称。创建一个新的repository，创建仓库的界面中Repository name那一栏输入自己的账号名称.github.io（例如 heyHuang.github.io），其他的可以不用填写。创建成功后你就拥有一个网站<a href="https://heyHuang.github.io">https://heyHuang.github.io</a> ，但是打开网页是没有内容，因为你还没有将刚才本地构建的网站上传到github中。</p>
+<h2 id="二、新建仓库"><a href="#二、新建仓库" class="headerlink" title="二、新建仓库"></a>二、新建仓库</h2><p>在github上注册一个账号，记住你账号名称。创建一个新的repository，创建仓库的界面中Repository name那一栏输入自己的账号名称.github.io（例如 heyHuang.github.io），其他的可以不用填写。创建成功后你就拥有一个网站<a href="https://heyHuang.github.io" target="_blank" rel="noopener">https://heyHuang.github.io</a> ，但是打开网页是没有内容，因为你还没有将刚才本地构建的网站上传到github中。</p>
 <h2 id="三、Hexo关联GitHub"><a href="#三、Hexo关联GitHub" class="headerlink" title="三、Hexo关联GitHub"></a>三、Hexo关联GitHub</h2><p><a href="https://blog.csdn.net/ithanmang/article/details/80869923" target="_blank" rel="noopener">本地项目关联githu参考网站</a><br>打开电脑终端，输入命令，名字替换成github上的用户名，email则是注册github时的邮箱</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"heyHuang"</span></span><br><span class="line">$ git config --global user.email <span class="string">"584453773@qq.com"</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"584453773@qq.com"</span></span><br></pre></td></tr></table></figure>
 <p>最后一行确定之后，会出现一些命令，直接enter不用管。</p>
@@ -169,7 +169,7 @@
 <p>然后打开myblog文件夹的终端，开始部署：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 
-<p>刷新一下github中heyHuang.github.io仓库页面，本地的文件已经上传。打开网站<a href="https://heyHuang.github.io">https://heyHuang.github.io</a> ，发现页面和localhost:4000 预览的结果一样。此时一个简单的个人网站已经构建好了。</p>
+<p>刷新一下github中heyHuang.github.io仓库页面，本地的文件已经上传。打开网站<a href="https://heyHuang.github.io" target="_blank" rel="noopener">https://heyHuang.github.io</a> ，发现页面和localhost:4000 预览的结果一样。此时一个简单的个人网站已经构建好了。</p>
 <hr>
 <h2 id="进阶步骤"><a href="#进阶步骤" class="headerlink" title="进阶步骤"></a>进阶步骤</h2><h2 id="一、修改域名"><a href="#一、修改域名" class="headerlink" title="一、修改域名"></a>一、修改域名</h2><p>（1）首先购买一个域名，我是直接上阿里云选了一个比较便宜的域名，如果是.com这种费用就会高一点。购买成功之后，直接在阿里云里面操作，打开域名控制台，打开刚才购买的域名的解析，添加记录：记录类型选择CNAME，主机记录填写www，记录值填写heyHuang.github.io<br>（2）然后打开github中heyHuang.github.io仓库，添加文件，命名为CNAME，内容则你申请的域名（<a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> ）<br>等一会儿，打开<a href="http://www.hqyblog.top" target="_blank" rel="noopener">www.hqyblog.top</a> 网页，此时域名已经修改成功。</p>
 <h2 id="二、修改页面设计"><a href="#二、修改页面设计" class="headerlink" title="二、修改页面设计"></a>二、修改页面设计</h2><p>hexo初始化的页面没什么特点，可以根据自己的需求修改主题。进入hexo官网选择主题，这里主要解释一下操作步骤，以NEXT主题为例。你可以去NEXT主题作者的github上直接下载，一般作者都会有说明，当然也可以利用命令行操作。</p>
